@@ -3,6 +3,10 @@
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\CardController;
+use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\Admin\DoctorsController;
 
 //admin login routes
 Route::get('/login', [AuthController::class, 'login'])->name('login');
@@ -18,4 +22,13 @@ Route::middleware('auth:admin')->name('admin.')->group(function () {
     Route::get('/admin-delete-{id}',[AdminController::class,'delete'])->name('admin.delete');
     Route::get('/admin-create',[AdminController::class,'create'])->name('create.admin');
     Route::post('/admin-create',[AdminController::class,'store'])->name('create.admin.store');
+    //card crud routes
+    Route::resource('cards', CardController::class)->except(['show']);
+    //services crud routes
+    Route::resource('services', ServiceController::class)->except(['show']);
+    //doctors crud routes
+    Route::resource('doctors', DoctorsController::class)->except(['show']);
+    //contacts routes
+    Route::get('/contacts', [ContactController::class, 'contacts'])->name('contacts');
+    Route::post('/contact/hide', [ContactController::class, 'hideContact'])->name('contacts.hide');
 });

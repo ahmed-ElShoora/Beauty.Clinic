@@ -164,6 +164,30 @@
                         <span>المشرفين</span>
                     </a>
                 </li>
+                <li>
+                    <a href="{{Route('admin.cards.index')}}">
+                        <i class="simple-icon-credit-card"></i>
+                        <span>البطاقات</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{Route('admin.services.index')}}">
+                        <i class="simple-icon-globe"></i>
+                        <span>الخدمات</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{Route('admin.doctors.index')}}">
+                        <i class="simple-icon-user"></i>
+                        <span>الأطباء</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{Route('admin.contacts')}}">
+                        <i class="simple-icon-envelope"></i>
+                        <span>اتصل بنا</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
