@@ -253,13 +253,6 @@
             box-shadow: 0 10px 26px rgba(15, 36, 48, .06);
         }
 
-        .doctor-photo {
-            height: 180px;
-            background:
-                    radial-gradient(140px 140px at 35% 30%, rgba(45,111,134,.20), transparent 60%),
-                    linear-gradient(135deg, #dfeaf0, #f6fbfd);
-        }
-
         .doctor-body {
             padding: 14px 14px 16px;
         }
@@ -374,36 +367,15 @@
             </p>
 
             <div class="cards-grid">
-                <div class="card">
-                    <div class="card-icon">✦</div>
-                    <h3 class="card-title">خدمات العناية بالبشرة</h3>
-                    <p class="card-text">جلسات عناية وتنظيف عميق ونضارة لبشرة صحية وإشراقة طبيعية.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">⌁</div>
-                    <h3 class="card-title">إزالة الشعر بالليزر</h3>
-                    <p class="card-text">تقنيات متقدمة لنتائج فعّالة مع راحة وخصوصية.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">❖</div>
-                    <h3 class="card-title">نحت الجسم</h3>
-                    <p class="card-text">حلول حديثة لتحسين القوام وشدّ البشرة حسب احتياجك.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">✺</div>
-                    <h3 class="card-title">حقن الفيلر</h3>
-                    <p class="card-text">تعزيز الملامح وملء الفراغات بإطلالة طبيعية ومتوازنة.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">✚</div>
-                    <h3 class="card-title">البوتوكس</h3>
-                    <p class="card-text">تقليل خطوط التعبير وإضفاء مظهر أكثر شباباً.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">◈</div>
-                    <h3 class="card-title">استشارات تجميل</h3>
-                    <p class="card-text">تقييم شامل وخطة علاج تناسبك مع متابعة دقيقة.</p>
-                </div>
+                @foreach($cards as $card)
+                    <div class="card">
+                        <div class="card-icon" style="padding: 6px">
+                            <img src="{{asset('storage/'.$card->icon)}}">
+                        </div>
+                        <h3 class="card-title">{{$card->name}}</h3>
+                        <p class="card-text">{{$card->description}}</p>
+                    </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -456,31 +428,24 @@
             </div>
 
             <div class="doctor-grid" id="team">
-                <article class="doctor-card">
-                    <div class="doctor-photo" aria-hidden="true"></div>
-                    <div class="doctor-body">
-                        <h3 class="doctor-name">د. اسم الطبيب</h3>
-                        <p class="doctor-role">طبيب تجميل</p>
-                    </div>
-                </article>
-                <article class="doctor-card">
-                    <div class="doctor-photo" aria-hidden="true" style="background:
-                        radial-gradient(140px 140px at 70% 30%, rgba(45,111,134,.18), transparent 60%),
-                        linear-gradient(135deg, #dde8ee, #f6fbfd);"></div>
-                    <div class="doctor-body">
-                        <h3 class="doctor-name">د. اسم الطبيب</h3>
-                        <p class="doctor-role">طبيب تجميل</p>
-                    </div>
-                </article>
-                <article class="doctor-card">
-                    <div class="doctor-photo" aria-hidden="true" style="background:
-                        radial-gradient(140px 140px at 45% 25%, rgba(45,111,134,.16), transparent 60%),
-                        linear-gradient(135deg, #dfeaf0, #f3f9fc);"></div>
-                    <div class="doctor-body">
-                        <h3 class="doctor-name">د. اسم الطبيب</h3>
-                        <p class="doctor-role">طبيب تجميل</p>
-                    </div>
-                </article>
+                @foreach($doctors as $doctor)
+                    <article class="doctor-card">
+                        <div 
+                        class="doctor-photo" 
+                        aria-hidden="true"
+                        style="
+                            height: 400px;
+                            background: url('{{asset('storage/'.$doctor->photo)}}');
+                            background-size: cover;
+                            background-position: center;
+                        "   
+                        ></div>
+                        <div class="doctor-body">
+                            <h3 class="doctor-name">{{$doctor->name}}</h3>
+                            <p class="doctor-role">{{$doctor->specialization}}</p>
+                        </div>
+                    </article>
+                @endforeach
             </div>
         </div>
     </section>

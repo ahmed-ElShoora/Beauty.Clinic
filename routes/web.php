@@ -6,10 +6,9 @@ require __DIR__.'/admin.php';
 use App\Http\Controllers\Web\ContactUsController;
 use App\Http\Controllers\Web\ServiceController;
 use App\Http\Controllers\Web\DoctorController;
+use App\Http\Controllers\Web\HomeController;
 
-Route::get('/', function() {
-    return view('web.index');
-});
+Route::get('/', HomeController::class);
 
 Route::get('/services-web', ServiceController::class);
 Route::get('/doctors-web', DoctorController::class);

@@ -36,7 +36,7 @@
                                         <a href="{{Route('admin.cards.edit',$card->id)}}" class="btn btn-sm btn-outline-primary">تعديل</a>
                                     </td>
                                     <td class="text-center">
-                                        <a href="{{Route('admin.cards.delete',$card->id)}}" class="btn btn-sm btn-outline-danger">حذف</a>
+                                        <a href="{{Route('admin.cards.destroy',$card->id)}}" class="btn btn-sm btn-outline-danger">حذف</a>
                                     </td>
                                 </tr>
                             @endforeach

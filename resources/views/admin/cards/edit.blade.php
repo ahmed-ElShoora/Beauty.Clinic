@@ -42,7 +42,7 @@
 
                             <div class="tooltip-label-right">
                                 <div class="error-l-100 position-relative form-group">
-                                    <label>الايقونة ***</label>
+                                    <label>الايقونة</label>
                                     <input name="icon" id="icon" type="file" accept="image/*" class="form-control">
                                     @error('icon')
                                     <div class="alert alert-danger" role="alert" style="text-align: center">
