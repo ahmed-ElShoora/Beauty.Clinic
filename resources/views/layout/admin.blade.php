@@ -165,8 +165,14 @@
                     </a>
                 </li>
                 <li>
+                    <a href="{{Route('admin.schedule')}}">
+                        <i class="simple-icon-clock"></i>
+                        <span>مواعيد العياده</span>
+                    </a>
+                </li>
+                <li>
                     <a href="{{Route('admin.cards.index')}}">
-                        <i class="simple-icon-credit-card"></i>
+                        <i class="simple-icon-plus"></i>
                         <span>البطاقات</span>
                     </a>
                 </li>
@@ -186,6 +192,12 @@
                     <a href="{{Route('admin.contacts')}}">
                         <i class="simple-icon-envelope"></i>
                         <span>اتصل بنا</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{Route('admin.setting')}}">
+                        <i class="simple-icon-settings"></i>
+                        <span>الإعدادات</span>
                     </a>
                 </li>
             </ul>

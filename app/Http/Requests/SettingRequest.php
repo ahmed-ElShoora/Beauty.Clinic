@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateDoctorRequest extends FormRequest
+class SettingRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,11 +23,10 @@ class CreateDoctorRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|string|max:255',
-            'specialization' => 'nullable|string|max:255',
-            'experience' => 'nullable|string|max:255',
-            'description' => 'nullable|string',
-            'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
+            'phone' => 'required|string',
+            'whatsapp' => 'required|string',
+            'email' => 'required|email',
+            'map' => 'required|url',
         ];
     }
 }

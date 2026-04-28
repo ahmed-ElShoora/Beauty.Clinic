@@ -42,7 +42,7 @@
                                         <a href="{{Route('admin.doctors.edit',$doctor->id)}}" class="btn btn-sm btn-outline-primary">تعديل</a>
                                     </td>
                                     <td class="text-center">
-                                        <a href="{{Route('admin.doctors.delete',$doctor->id)}}" class="btn btn-sm btn-outline-danger">حذف</a>
+                                        <a href="{{Route('admin.doctors.destroy',$doctor->id)}}" class="btn btn-sm btn-outline-danger">حذف</a>
                                     </td>
                                 </tr>
                             @endforeach

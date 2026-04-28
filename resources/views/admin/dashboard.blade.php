@@ -27,6 +27,34 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card mb-4 progress-banner">
+                    <div class="card-body text-center justify-content-between d-flex flex-row align-items-center">
+                        <div class="card-body text-center">
+                            <i class="simple-icon-user mr-2 text-white align-text-bottom d-inline-block"></i>
+                            <div>
+                                <p class="lead text-white"><span style="font-family: 'Tajawal', sans-serif">عدد الأطباء </span> {{\App\Models\Doctor::count()}} </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card mb-4 progress-banner">
+                    <div class="card-body text-center justify-content-between d-flex flex-row align-items-center">
+                        <div class="card-body text-center">
+                            <i class="simple-icon-user mr-2 text-white align-text-bottom d-inline-block"></i>
+                            <div>
+                                <p class="lead text-white"><span style="font-family: 'Tajawal', sans-serif">عدد الخدمات </span> {{\App\Models\Service::count()}} </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
     </a>

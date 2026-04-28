@@ -7,6 +7,8 @@ use App\Http\Controllers\Admin\CardController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\DoctorsController;
+use App\Http\Controllers\Admin\SettingController;
+use App\Http\Controllers\Admin\ScheduleController;
 
 //admin login routes
 Route::get('/login', [AuthController::class, 'login'])->name('login');
@@ -31,4 +33,10 @@ Route::middleware('auth:admin')->name('admin.')->group(function () {
     //contacts routes
     Route::get('/contacts', [ContactController::class, 'contacts'])->name('contacts');
     Route::post('/contact/hide', [ContactController::class, 'hideContact'])->name('contacts.hide');
+    //setting routes
+    Route::get('/setting',[SettingController::class,'index'])->name('setting');
+    Route::post('/setting',[SettingController::class,'update'])->name('setting.update');
+    //schedule routes
+    Route::get('/schedule',[ScheduleController::class,'index'])->name('schedule');
+    Route::post('/schedule',[ScheduleController::class,'update'])->name('schedule.update');
 });
