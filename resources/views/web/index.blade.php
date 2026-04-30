@@ -61,10 +61,8 @@
 
         .hero-media {
             position: relative;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 12px;
-            justify-items: start;
+            display: flex;
+            justify-content: flex-end;
         }
 
         .hero-card {
@@ -269,57 +267,24 @@
             font-size: 12.5px;
         }
 
-        .cta {
-            background: #3c6b80;
-            color: #fff;
-            border-radius: 0;
-        }
-
-        .cta-inner {
-            padding: 52px 0;
-            text-align: center;
-        }
-
-        .cta-title {
-            margin: 0 0 10px;
-            font-weight: 800;
-            font-size: 26px;
-        }
-
-        .cta-text {
-            margin: 0 auto 18px;
-            opacity: .9;
-            font-size: 13px;
-            max-width: 700px;
-        }
-
-        .cta-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            height: 40px;
-            padding: 0 18px;
-            border-radius: 999px;
-            background: rgba(255,255,255,.18);
-            border: 1px solid rgba(255,255,255,.25);
-            color: #fff;
-            text-decoration: none;
-            font-weight: 800;
-            font-size: 13px;
-        }
-
-        .cta-btn:hover {
-            background: rgba(255,255,255,.22);
-        }
-
         /* Responsive */
         @media (max-width: 980px) {
-            .hero-grid { grid-template-columns: 1fr; }
+            .hero-grid { grid-template-columns: 1fr; padding: 20px 0; }
             .why-grid { grid-template-columns: 1fr; }
-            .cards-grid, .doctor-grid { grid-template-columns: 1fr; }
+            .cards-grid, .doctor-grid { grid-template-columns: repeat(2, 1fr); }
             .hero-media { justify-items: stretch; }
             .hero-card { width: 100%; }
         }
+        @media (max-width: 650px) {
+            .cards-grid, .doctor-grid { grid-template-columns: 1fr; }
+            .doctor-photo { 
+                height: 300px;
+             }
+            .hero-grid h1 {
+                font-size: 27px;
+            }
+        }
+
     </style>
 @endsection
 
@@ -384,10 +349,7 @@
     <section class="section" id="about">
         <div class="web-container">
             <div class="why-grid">
-                <div class="why-media" aria-hidden="true">
-                    <div class="why-photo"></div>
-                    <div class="why-photo why-photo--2"></div>
-                </div>
+                
 
                 <div>
                     <div class="eyebrow">لماذا عيادة دريما؟</div>
@@ -414,6 +376,10 @@
                             <span>بيئة مريحة وخصوصية كاملة وتجربة سلسة.</span>
                         </li>
                     </ul>
+                </div>
+                <div class="why-media" aria-hidden="true">
+                    <div class="why-photo"></div>
+                    <div class="why-photo why-photo--2"></div>
                 </div>
             </div>
         </div>

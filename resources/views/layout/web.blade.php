@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <style>
         :root{
@@ -187,37 +188,7 @@
         }
         .web-footer-bottom a:hover{color:var(--c-primary)}
 
-        /* Responsive */
-        @media (max-width: 980px){
-            .web-burger{display:inline-block}
-            .web-menu{
-                display:none;
-                position:absolute;
-                inset-inline:20px;
-                top:72px;
-                background:#fff;
-                border:1px solid var(--c-border);
-                border-radius:var(--radius);
-                padding:14px 14px;
-                gap:12px;
-                flex-direction:column;
-                align-items:flex-start;
-                box-shadow:0 12px 30px rgba(15,36,48,.08);
-            }
-            .web-menu.is-open{display:flex}
-            .web-nav-inner{position:relative}
-
-            .web-footer-grid{
-                grid-template-columns:1fr 1fr;
-            }
-        }
-        @media (max-width: 520px){
-            .web-footer-grid{grid-template-columns:1fr}
-            .web-footer-bottom{flex-direction:column; align-items:flex-start}
-            .web-cta{display:none}
-        }
-
-        .cta {
+                .cta {
             background: #3c6b80;
             color: #fff;
             border-radius: 0;
@@ -261,12 +232,52 @@
         }
 
         /* Responsive */
-        @media (max-width: 980px) {
-            .hero-grid { grid-template-columns: 1fr; }
-            .why-grid { grid-template-columns: 1fr; }
-            .cards-grid, .doctor-grid { grid-template-columns: 1fr; }
-            .hero-media { justify-items: stretch; }
-            .hero-card { width: 100%; }
+        @media (max-width: 980px){
+            .web-burger{display:inline-block}
+            .web-menu{
+                display:none;
+                position:absolute;
+                inset-inline:20px;
+                top:72px;
+                background:#fff;
+                border:1px solid var(--c-border);
+                border-radius:var(--radius);
+                padding:14px 14px;
+                gap:12px;
+                flex-direction:column;
+                align-items:flex-start;
+                box-shadow:0 12px 30px rgba(15,36,48,.08);
+            }
+            .web-menu.is-open{display:flex}
+            .web-nav-inner{position:relative}
+
+            .web-footer-grid{
+                grid-template-columns:1fr 1fr;
+            }
+        }
+        @media (max-width: 520px){
+            .web-footer-grid{grid-template-columns:1fr}
+            .web-footer-bottom{flex-direction:column; align-items:flex-start}
+        }
+                .float-whatsapp {
+            position: fixed;
+            right: 30px;
+            bottom: 30px;
+            background: #008000;
+            padding: 5px;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+        }
+        .float-whatsapp a {
+            display: block;
+        }
+        .float-whatsapp i {
+            font-size: 44px;
+            color: #fff;
         }
     </style>
 
@@ -359,10 +370,19 @@
 
                 <div id="contact">
                     <div class="web-footer-title">تواصل معنا</div>
+                    @php
+                        $phone = optional(\App\Models\Setting::where('var','phone')->first())->value;
+                        $email = optional(\App\Models\Setting::where('var','email')->first())->value;
+                    @endphp
                     <ul class="web-footer-list">
                         <li>📍 الرياض، المملكة العربية السعودية</li>
-                        <li>📞 {{ optional(\App\Models\Setting::where('var','phone')->first())->value }}</li>
-                        <li>✉️ {{ optional(\App\Models\Setting::where('var','email')->first())->value }}</li>
+                        <li>
+                            📞 <a href="tel:{{ $phone }}">{{ $phone }}</a>
+                        </li>
+
+                        <li>
+                            ✉️ <a href="mailto:{{ $email }}">{{ $email }}</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -377,6 +397,12 @@
         </div>
     </div>
 </footer>
+
+<div class="float-whatsapp">
+    <a href="https://wa.me/{{ optional(\App\Models\Setting::where('var','whatsapp')->first())->value }}">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+</div>
 
 <script>
     window.__toggleWebMenu = function () {

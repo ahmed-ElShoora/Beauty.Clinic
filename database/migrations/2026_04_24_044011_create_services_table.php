@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('icon');
             $table->string('name');
             $table->string('description');
-            $table->integer('duration');
-            $table->decimal('price', 8, 2);
+            $table->integer('duration')->nullable();
+            $table->decimal('price', 8, 2)->nullable();
             $table->string('patch');
             $table->timestamps();
         });

@@ -26,8 +26,8 @@ class CreateServiceRequest extends FormRequest
             'icon' => 'required|image|mimes:jpg,jpeg,png,webp',
             'name' => 'required|string|max:255',
             'description' => 'required|string',
-            'duration' => 'required|integer|min:1',
-            'price' => 'required|numeric|min:0',
+            'duration' => 'nullable|integer|min:1',
+            'price' => 'nullable|numeric|min:0',
             'patch' => 'required|string|max:255',
         ];
     }

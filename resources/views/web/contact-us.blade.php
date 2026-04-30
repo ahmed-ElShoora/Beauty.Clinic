@@ -36,6 +36,11 @@
             align-items: start;
         }
 
+        .cu-grid > div.first {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+        }
         .cu-card {
             background: #fff;
             border: 1px solid rgba(232, 239, 243, .95);
@@ -253,7 +258,7 @@
     <section class="cu-wrap">
         <div class="web-container">
             <div class="cu-grid">
-                <div>
+                <div class="first">
                     <div class="mini-grid">
                         <div class="cu-card mini">
                             <div class="mini-icon">⟲</div>
@@ -363,11 +368,13 @@
                         <button class="submit" type="submit">إرسال الرسالة</button>
                     </form>
 
-                    <div style="height:14px"></div>
-
-                    <iframe src="{{ optional(\App\Models\Setting::where('var','map')->first())->value }}"
-                     width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
+
+                <div class="map">
+                    <iframe src="{{ optional(\App\Models\Setting::where('var','map')->first())->value }}"
+                     width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+                </div>
+
             </div>
         </div>
     </section>

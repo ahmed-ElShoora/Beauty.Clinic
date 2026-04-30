@@ -123,8 +123,11 @@
         }
 
         @media (max-width: 980px) {
-            .doc-grid { grid-template-columns: 1fr; }
+            .doc-grid { grid-template-columns: repeat(2, 1fr); }
             .doc-grid--2 { grid-template-columns: 1fr; max-width: none; }
+        }
+        @media (max-width: 650px) {
+            .doc-grid { grid-template-columns: 1fr; }
         }
     </style>
 @endsection
