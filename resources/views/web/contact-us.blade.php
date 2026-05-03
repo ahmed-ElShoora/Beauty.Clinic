@@ -127,7 +127,7 @@
 
         .hours-row {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 6fr;
             gap: 12px;
             padding: 12px 0;
             border-top: 1px solid rgba(232, 239, 243, .9);
@@ -317,11 +317,10 @@
                                             @forelse($schedule->slots as $slot)
                                                 <div style="display:inline-block">
                                                     <span class="pill">
-                                                        {{ \Carbon\Carbon::parse($slot->start_time)->format('g:i A') }}
-                                                        -
                                                         {{ \Carbon\Carbon::parse($slot->end_time)->format('g:i A') }}
+                                                        -
+                                                        {{ \Carbon\Carbon::parse($slot->start_time)->format('g:i A') }}
                                                     </span>
-
                                                 </div>
 
                                                 @if(!$loop->last)
@@ -371,8 +370,7 @@
                 </div>
 
                 <div class="map">
-                    <iframe src="{{ optional(\App\Models\Setting::where('var','map')->first())->value }}"
-                     width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+                    <iframe style="border-radius: 15px" width="600" height="230" id="gmap_canvas" src="{{ optional(\App\Models\Setting::where('var','map')->first())->value }}"></iframe>
                 </div>
 
             </div>

@@ -47,7 +47,7 @@
 
         .svc-media {
             position: relative;
-            height: 165px;
+            height: 250px;
             background:
                 radial-gradient(160px 120px at 30% 35%, rgba(45,111,134,.22), transparent 60%),
                 linear-gradient(135deg, #dfeaf0, #f6fbfd);
@@ -179,7 +179,7 @@
                             <p class="svc-desc">
                                 {{$service->description}}
                             </p>
-                            <a class="svc-btn" href="{{ url('/contact-us') }}">احجز الآن</a>
+                            <a class="svc-btn" href="{{ url('/book-appointment') }}">احجز الآن</a>
                         </div>
                     </article>
                 @endforeach
