@@ -27,7 +27,7 @@ class CreateDoctorRequest extends FormRequest
             'specialization' => 'nullable|string|max:255',
             'experience' => 'nullable|string|max:255',
             'description' => 'nullable|string',
-            'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
+            'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
         ];
     }
 }

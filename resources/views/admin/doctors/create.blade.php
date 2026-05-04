@@ -63,8 +63,8 @@
 
                             <div class="tooltip-label-right">
                                 <div class="error-l-100 position-relative form-group">
-                                    <label>صورة</label>
-                                    <input name="photo" id="photo" type="file" accept="image/*" class="form-control">
+                                    <label>صورة ***</label>
+                                    <input name="photo" required id="photo" type="file" accept="image/*" class="form-control">
                                     @error('icon')
                                     <div class="alert alert-danger" role="alert" style="text-align: center">
                                         {{ $message }}
