@@ -165,6 +165,12 @@
                     </a>
                 </li>
                 <li>
+                    <a href="{{Route('admin.booking')}}">
+                        <i class="simple-icon-calendar"></i>
+                        <span>الحجوزات</span>
+                    </a>
+                </li>
+                <li>
                     <a href="{{Route('admin.schedule')}}">
                         <i class="simple-icon-clock"></i>
                         <span>مواعيد العياده</span>

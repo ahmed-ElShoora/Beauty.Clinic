@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\DoctorsController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\ScheduleController;
+use App\Http\Controllers\Admin\BookingController;
 
 //admin login routes
 Route::get('/login', [AuthController::class, 'login'])->name('login');
@@ -39,4 +40,8 @@ Route::middleware('auth:admin')->name('admin.')->group(function () {
     //schedule routes
     Route::get('/schedule',[ScheduleController::class,'index'])->name('schedule');
     Route::post('/schedule',[ScheduleController::class,'update'])->name('schedule.update');
+    //booking routes
+    Route::get('/bookings',[BookingController::class,'index'])->name('booking');
+    Route::post('/booking/{id}/confirm',[BookingController::class,'confirmAttendance'])->name('booking.confirm');
+    Route::post('/booking/{id}/cancel',[BookingController::class,'cancel'])->name('booking.cancel');
 });
