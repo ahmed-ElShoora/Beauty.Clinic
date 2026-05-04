@@ -261,7 +261,9 @@
                 <div class="first">
                     <div class="mini-grid">
                         <div class="cu-card mini">
-                            <div class="mini-icon">⟲</div>
+                            <div class="mini-icon">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
                             <h3>واتساب</h3>
                             <p>تواصل معنا مباشرة</p>
                             <a class="btn btn--wa" href="https://wa.me/{{ optional(\App\Models\Setting::where('var','whatsapp')->first())->value }}">محادثة واتساب</a>
