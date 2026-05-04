@@ -55,14 +55,14 @@
         }
 
         .doc-avatar {
-            width: 92px;
-            height: 92px;
+            width: 130px;
+            height: 130px;
             border-radius: 50%;
             margin: 2px auto 10px;
             background:
                 radial-gradient(60px 60px at 35% 35%, rgba(45,111,134,.25), transparent 65%),
                 linear-gradient(135deg, #1b2e38, #0e1b23);
-            border: 6px solid #fff;
+            /* border: 6px solid #fff; */
             box-shadow: 0 10px 20px rgba(15, 36, 48, .10);
         }
 
