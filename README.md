@@ -12,6 +12,7 @@
 4. setUp db info
 4. php artisan migrate
 5. php artisan db:seed
+6. php artisan storage:link
 
 ## run project
 1. in terminal 1 : php artisan serve --port=8000
